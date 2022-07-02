@@ -1,35 +1,127 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Somando Numeros</title>
-</head>
-<body>
-    <h1>Somando Valores!</h1>
-    <input type="number" name="txtn1" id="txtn1"> +     
-    <input type="number" name="txtn2" id="txtn2">
-    <input type="button" value="somar" onclick="somar()">
-    <div id="res">resultado</div>
-    <script>
-        function somar() {
-            var tn1 = window.document.getElementById("txtn1")
-            var tn2 = window.document.getElementById("txtn2")
-            var res = window.document.getElementById("res")
-            var n1 = Number(tn1.value)
-            var n2 = Number(tn2.value)
-            var s = n1 + n2
-            res.innerHTML = `A soma entre ${n1} e ${n2} é igual é ${s}`
+    <title>Operadores Lógicos</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #023E73;
+            margin: 0;
             
+        }
 
-
-
-
+        main {
+            background-color: #F2C12E;
+            width: 310px;
+            height: 400px;
+            margin: auto;
+            margin-top: 40px;
+            border: 1px solid #F2C12E;
+            border-radius: 26px 26px ;
+            box-shadow: 4px 6px 7px black;
 
         }
 
+        h1 {
+            margin-left: -1px;
+            margin-right: -1px;
+            background-color: #593E25;
+            color: white;
+            text-align: center;
+        }
 
-    </script>
+        input {
+            width: 75px;
+            height: 20px;
+            margin-left: 10px;
+            
+            border: 1px solid black;
+            
+            
+        }
+
+
+
+
+        div {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            background-color: aliceblue;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <main>
+
+        <h1>Calculando Números</h1>
+
+        <input type="number" name="txtn1" id="txtn1"> <strong>+</strong>
+        <input type="number" name="txtn2" id="txtn2">
+        <input type="button" value="Somar" onclick="somar()">
+        <div id="res"></div>
+        
+        <input type="number" name="subn1" id="subn1"> <strong>-</strong>
+        <input type="number" name="subn2" id="subn2">
+        <input type="button" value="Subtrair" onclick="subtrair()">
+        <div id="resub"></div>
+
+        <input type="number" name="multn1" id="multn1"> <strong>x</strong>
+        <input type="number" name="multn2" id="multn2">
+        <input type="button" value="Multiplicar" onclick="multiplicar()">
+        <div id="resmult"></div>
+
+        <input type="number" name="dvn1" id="dvn1"> <strong>÷</strong>
+        <input type="number" name="dvn2" id="dvn2">
+        <input type="button" value="Dividir" onclick="dividir()">
+        <div id="resdv"></div>
+
+        <script>
+            function somar() {
+            var tn1 = window.document.getElementById('txtn1') //serve o getElementById      
+            var tn2 = window.document.querySelector('input#txtn2') // serve o querySelector
+            var res = window.document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = ` O resultado é: <strong>${s}</strong>`
+            }
+
+            function subtrair() {
+            var sn1 = window.document.getElementById('subn1') //serve o getElementById      
+            var sn2 = window.document.querySelector('input#subn2') // serve o querySelector
+            var res = window.document.getElementById('resub')
+            var n1 = Number(sn1.value)
+            var n2 = Number(sn2.value)
+            var sub = n1 - n2
+            res.innerHTML = ` O resultado é: <strong>${sub}</strong>`        
+            }
+
+            function multiplicar() {
+            var mn1 = window.document.getElementById('multn1') //serve o getElementById      
+            var mn2 = window.document.querySelector('input#multn2') // serve o querySelector
+            var res = window.document.getElementById('resmult')
+            var n1 = Number(mn1.value)
+            var n2 = Number(mn2.value)
+            var mult = n1 * n2
+            res.innerHTML = ` O resultado é: <strong>${mult}</strong>`        
+            }
+
+            function dividir() {
+            var dvn1 = window.document.getElementById('dvn1') //serve o getElementById      
+            var dvn2 = window.document.querySelector('input#dvn2') // serve o querySelector
+            var res = window.document.getElementById('resdv')
+            var n1 = Number(dvn1.value)
+            var n2 = Number(dvn2.value)
+            var dv = n1 / n2
+            res.innerHTML = ` O resultado é: <strong>${dv}</strong>`        
+            }
+        </script>
+    </main>    
 </body>
 </html>
